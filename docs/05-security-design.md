@@ -36,7 +36,7 @@ History tables (`order_history`, `position_history`, `ledger_audit`, `settlement
 
 ## Connection Security Notes
 
-The Spring Boot `application.properties` should use the `spring_app` credentials (`SpringApp@2026!`) rather than root or admin credentials. The `admin_user` account has a 90-day password expiration policy enforced at the MySQL level via `PASSWORD EXPIRE INTERVAL 90 DAY`. Application service accounts should rotate credentials at least annually. The `auditor` user is restricted to connections from the `10.0.0.%` subnet, ensuring that compliance team access is limited to the internal corporate network. External connections from auditor credentials will be rejected by MySQL regardless of whether the password is correct.
+The Spring Boot `application.properties` should use the `spring_app` credentials (see `security/grants.sql` — replace placeholder passwords before deployment) rather than root or admin credentials. The `admin_user` account has a 90-day password expiration policy enforced at the MySQL level via `PASSWORD EXPIRE INTERVAL 90 DAY`. Application service accounts should rotate credentials at least annually. The `auditor` user is restricted to connections from the `10.0.0.%` subnet, ensuring that compliance team access is limited to the internal corporate network. External connections from auditor credentials will be rejected by MySQL regardless of whether the password is correct.
 
 ## Implementation
 

@@ -67,16 +67,20 @@ GRANT EXECUTE ON PROCEDURE capital_markets_db.sp_cancel_order_refund TO 'system_
 -- SECTION 3 — CREATE USERS
 -- ============================================================
 
+-- ⚠️  Replace the placeholder passwords below before running in production.
+--     Use strong, unique passwords that comply with FR-SEC-005 policy
+--     (≥12 chars, mixed case, digit, special character).
+
 CREATE USER IF NOT EXISTS 'admin_user'@'localhost'
-    IDENTIFIED BY 'Admin@SecurePass1!'
+    IDENTIFIED BY '<CHANGE_ME_admin_password>'
     PASSWORD EXPIRE INTERVAL 90 DAY;
 
 CREATE USER IF NOT EXISTS 'spring_app'@'localhost'
-    IDENTIFIED BY 'SpringApp@2026!'
+    IDENTIFIED BY '<CHANGE_ME_spring_app_password>'
     COMMENT 'Spring Boot application server connection';
 
 CREATE USER IF NOT EXISTS 'auditor'@'10.0.0.%'
-    IDENTIFIED BY 'Auditor@ReadOnly1!'
+    IDENTIFIED BY '<CHANGE_ME_auditor_password>'
     COMMENT 'Compliance team — restricted to internal network';
 
 -- ============================================================

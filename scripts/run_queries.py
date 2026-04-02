@@ -4,9 +4,11 @@ import mysql.connector
 
 def run():
     conn = mysql.connector.connect(
-        host="127.0.0.1", port=3306, user="root",
+        host=os.environ.get("MYSQL_HOST", "127.0.0.1"),
+        port=int(os.environ.get("MYSQL_PORT", "3306")),
+        user=os.environ.get("MYSQL_USER", "root"),
         password=os.environ.get("MYSQL_PASSWORD", ""),
-        database="capital_markets_db"
+        database=os.environ.get("MYSQL_DATABASE", "capital_markets_db"),
     )
     cursor = conn.cursor()
 

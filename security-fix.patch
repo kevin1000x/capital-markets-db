@@ -1,0 +1,59 @@
+diff --git a/docs/05-security-design.md b/docs/05-security-design.md
+index 3ff3f1c..f9530f1 100644
+--- a/docs/05-security-design.md
++++ b/docs/05-security-design.md
+@@ -36,7 +36,7 @@ History tables (`order_history`, `position_history`, `ledger_audit`, `settlement
+ 
+ ## Connection Security Notes
+ 
+-The Spring Boot `application.properties` should use the `spring_app` credentials (`SpringApp@2026!`) rather than root or admin credentials. The `admin_user` account has a 90-day password expiration policy enforced at the MySQL level via `PASSWORD EXPIRE INTERVAL 90 DAY`. Application service accounts should rotate credentials at least annually. The `auditor` user is restricted to connections from the `10.0.0.%` subnet, ensuring that compliance team access is limited to the internal corporate network. External connections from auditor credentials will be rejected by MySQL regardless of whether the password is correct.
++The Spring Boot `application.properties` should use the `spring_app` credentials (see `security/grants.sql` — replace placeholder passwords before deployment) rather than root or admin credentials. The `admin_user` account has a 90-day password expiration policy enforced at the MySQL level via `PASSWORD EXPIRE INTERVAL 90 DAY`. Application service accounts should rotate credentials at least annually. The `auditor` user is restricted to connections from the `10.0.0.%` subnet, ensuring that compliance team access is limited to the internal corporate network. External connections from auditor credentials will be rejected by MySQL regardless of whether the password is correct.
+ 
+ ## Implementation
+ 
+diff --git a/scripts/run_queries.py b/scripts/run_queries.py
+index 23b2447..a8d60c3 100644
+--- a/scripts/run_queries.py
++++ b/scripts/run_queries.py
+@@ -4,9 +4,11 @@ import mysql.connector
+ 
+ def run():
+     conn = mysql.connector.connect(
+-        host="127.0.0.1", port=3306, user="root",
++        host=os.environ.get("MYSQL_HOST", "127.0.0.1"),
++        port=int(os.environ.get("MYSQL_PORT", "3306")),
++        user=os.environ.get("MYSQL_USER", "root"),
+         password=os.environ.get("MYSQL_PASSWORD", ""),
+-        database="capital_markets_db"
++        database=os.environ.get("MYSQL_DATABASE", "capital_markets_db"),
+     )
+     cursor = conn.cursor()
+ 
+diff --git a/security/grants.sql b/security/grants.sql
+index 200fdb4..bc06a86 100644
+--- a/security/grants.sql
++++ b/security/grants.sql
+@@ -67,16 +67,20 @@ GRANT EXECUTE ON PROCEDURE capital_markets_db.sp_cancel_order_refund TO 'system_
+ -- SECTION 3 — CREATE USERS
+ -- ============================================================
+ 
++-- ⚠️  Replace the placeholder passwords below before running in production.
++--     Use strong, unique passwords that comply with FR-SEC-005 policy
++--     (≥12 chars, mixed case, digit, special character).
++
+ CREATE USER IF NOT EXISTS 'admin_user'@'localhost'
+-    IDENTIFIED BY 'Admin@SecurePass1!'
++    IDENTIFIED BY '<CHANGE_ME_admin_password>'
+     PASSWORD EXPIRE INTERVAL 90 DAY;
+ 
+ CREATE USER IF NOT EXISTS 'spring_app'@'localhost'
+-    IDENTIFIED BY 'SpringApp@2026!'
++    IDENTIFIED BY '<CHANGE_ME_spring_app_password>'
+     COMMENT 'Spring Boot application server connection';
+ 
+ CREATE USER IF NOT EXISTS 'auditor'@'10.0.0.%'
+-    IDENTIFIED BY 'Auditor@ReadOnly1!'
++    IDENTIFIED BY '<CHANGE_ME_auditor_password>'
+     COMMENT 'Compliance team — restricted to internal network';
+ 
+ -- ============================================================
