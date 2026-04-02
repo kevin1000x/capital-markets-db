@@ -1,0 +1,51 @@
+=== SHOW TABLES ===
+Tables_in_capital_markets_db
+----------------------------------------
+accounting_ledgers
+assets
+ledger_audit
+order_history
+orders
+portfolios
+position_history
+positions
+settlement_history
+settlements
+traders
+vw_active_orders
+vw_daily_settlements
+vw_portfolio_summary
+vw_trader_account_summary
+
+=== DESCRIBE orders ===
+Field	Type	Null	Key	Default	Extra
+--------------------------------------------------------------------------------
+order_id	bigint	NO	PRI	None	auto_increment
+trader_id	bigint	NO	MUL	None	
+asset_id	bigint	NO	MUL	None	
+portfolio_id	bigint	NO	MUL	None	
+order_type	enum('MARKET','LIMIT','STOP','STOP_LIMIT')	NO		None	
+order_side	enum('BUY','SELL')	NO		None	
+quantity	int	NO		None	
+limit_price	decimal(15,4)	YES		None	
+filled_quantity	int	NO		0	
+average_fill_price	decimal(15,4)	YES		None	
+order_status	enum('PENDING','PARTIALLY_FILLED','FILLED','CANCELLED','REJECTED')	NO	MUL	PENDING	
+order_time	datetime(6)	NO		CURRENT_TIMESTAMP(6)	DEFAULT_GENERATED
+cancelled_at	datetime	YES		None	
+cancel_reason	varchar(255)	YES		None	
+created_at	datetime	NO		CURRENT_TIMESTAMP	DEFAULT_GENERATED
+updated_at	datetime	NO		CURRENT_TIMESTAMP	DEFAULT_GENERATED on update CURRENT_TIMESTAMP
+
+=== DESCRIBE positions ===
+Field	Type	Null	Key	Default	Extra
+--------------------------------------------------------------------------------
+position_id	bigint	NO	PRI	None	auto_increment
+portfolio_id	bigint	NO	MUL	None	
+asset_id	bigint	NO	MUL	None	
+quantity	int	NO		0	
+average_cost	decimal(15,4)	NO		0.0000	
+current_value	decimal(15,4)	NO		0.0000	
+unrealized_pnl	decimal(15,4)	NO		0.0000	
+created_at	datetime	NO		CURRENT_TIMESTAMP	DEFAULT_GENERATED
+updated_at	datetime	NO		CURRENT_TIMESTAMP	DEFAULT_GENERATED on update CURRENT_TIMESTAMP

@@ -1,0 +1,8 @@
+=== DATABASE ROW COUNTS ===
+traders: 20,005
+assets: 10
+portfolios: 32,993
+orders: 100,006
+positions: 0
+settlements: 59,821
+accounting_ledgers: 119,642

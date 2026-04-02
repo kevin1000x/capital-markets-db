@@ -1,0 +1,7 @@
+=== SHOW GRANTS FOR 'spring_app'@'localhost' ===
+GRANT USAGE ON *.* TO `spring_app`@`localhost`
+GRANT `system_role`@`%` TO `spring_app`@`localhost`
+
+=== SHOW GRANTS FOR 'auditor'@'10.0.0.%' ===
+GRANT USAGE ON *.* TO `auditor`@`10.0.0.%`
+GRANT `auditor_role`@`%` TO `auditor`@`10.0.0.%`

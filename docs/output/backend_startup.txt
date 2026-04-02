@@ -1,0 +1,78 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.trading:capital-markets-api >-------------------
+[INFO] Building Capital Markets API 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.4.3:run (default-cli) > test-compile @ capital-markets-api >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ capital-markets-api ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ capital-markets-api ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 4 source files with javac [debug parameters release 23] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ capital-markets-api ---
+[INFO] skip non existing resourceDirectory E:\capital-markets-db\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ capital-markets-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] 
+[INFO] <<< spring-boot:3.4.3:run (default-cli) < test-compile @ capital-markets-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.4.3:run (default-cli) @ capital-markets-api ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2026-03-12T18:18:38.559+08:00  INFO 99064 --- [capital-markets-api] [           main] com.trading.TradingApplication           : Starting TradingApplication using Java 23.0.1 with PID 99064 (E:\capital-markets-db\backend\target\classes started by Kevin in E:\capital-markets-db\backend)
+2026-03-12T18:18:38.560+08:00  INFO 99064 --- [capital-markets-api] [           main] com.trading.TradingApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-03-12T18:18:38.950+08:00  INFO 99064 --- [capital-markets-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-12T18:18:38.984+08:00  INFO 99064 --- [capital-markets-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 JPA repository interface.
+2026-03-12T18:18:39.300+08:00  INFO 99064 --- [capital-markets-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-03-12T18:18:39.313+08:00  INFO 99064 --- [capital-markets-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-12T18:18:39.313+08:00  INFO 99064 --- [capital-markets-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-03-12T18:18:39.355+08:00  INFO 99064 --- [capital-markets-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-12T18:18:39.356+08:00  INFO 99064 --- [capital-markets-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 757 ms
+2026-03-12T18:18:39.451+08:00  INFO 99064 --- [capital-markets-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-12T18:18:39.484+08:00  INFO 99064 --- [capital-markets-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-03-12T18:18:39.506+08:00  INFO 99064 --- [capital-markets-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-12T18:18:39.689+08:00  INFO 99064 --- [capital-markets-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-12T18:18:39.707+08:00  INFO 99064 --- [capital-markets-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-12T18:18:39.943+08:00  INFO 99064 --- [capital-markets-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@678586f0
+2026-03-12T18:18:39.944+08:00  INFO 99064 --- [capital-markets-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-12T18:18:39.995+08:00  INFO 99064 --- [capital-markets-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-12T18:18:40.487+08:00  INFO 99064 --- [capital-markets-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-12T18:18:40.488+08:00  INFO 99064 --- [capital-markets-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12T18:18:40.683+08:00  WARN 99064 --- [capital-markets-api] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-12T18:18:40.892+08:00  INFO 99064 --- [capital-markets-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-03-12T18:18:40.896+08:00  INFO 99064 --- [capital-markets-api] [           main] com.trading.TradingApplication           : Started TradingApplication in 2.608 seconds (process running for 2.899)
+2026-03-12T18:22:14.323+08:00  INFO 99064 --- [capital-markets-api] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-12T18:22:14.323+08:00  INFO 99064 --- [capital-markets-api] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-12T18:22:14.324+08:00  INFO 99064 --- [capital-markets-api] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: select o1_0.order_id,o1_0.asset_id,o1_0.average_fill_price,o1_0.cancel_reason,o1_0.cancelled_at,o1_0.created_at,o1_0.filled_quantity,o1_0.limit_price,o1_0.order_side,o1_0.order_status,o1_0.order_time,o1_0.order_type,o1_0.portfolio_id,o1_0.quantity,o1_0.trader_id,o1_0.updated_at from orders o1_0 where o1_0.trader_id=?
+Hibernate: select o1_0.order_id,o1_0.asset_id,o1_0.average_fill_price,o1_0.cancel_reason,o1_0.cancelled_at,o1_0.created_at,o1_0.filled_quantity,o1_0.limit_price,o1_0.order_side,o1_0.order_status,o1_0.order_time,o1_0.order_type,o1_0.portfolio_id,o1_0.quantity,o1_0.trader_id,o1_0.updated_at from orders o1_0 where o1_0.trader_id=?
+Hibernate: insert into orders (asset_id,average_fill_price,cancel_reason,cancelled_at,filled_quantity,limit_price,order_side,order_status,order_type,portfolio_id,quantity,trader_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select o1_0.order_id,o1_0.asset_id,o1_0.average_fill_price,o1_0.cancel_reason,o1_0.cancelled_at,o1_0.created_at,o1_0.filled_quantity,o1_0.limit_price,o1_0.order_side,o1_0.order_status,o1_0.order_time,o1_0.order_type,o1_0.portfolio_id,o1_0.quantity,o1_0.trader_id,o1_0.updated_at from orders o1_0 where o1_0.trader_id=?
+Hibernate: {call sp_cancel_order_refund(?,?,?,?,?)}
+Hibernate: select o1_0.order_id,o1_0.asset_id,o1_0.average_fill_price,o1_0.cancel_reason,o1_0.cancelled_at,o1_0.created_at,o1_0.filled_quantity,o1_0.limit_price,o1_0.order_side,o1_0.order_status,o1_0.order_time,o1_0.order_type,o1_0.portfolio_id,o1_0.quantity,o1_0.trader_id,o1_0.updated_at from orders o1_0 where o1_0.trader_id=?
+Hibernate: select o1_0.order_id,o1_0.asset_id,o1_0.average_fill_price,o1_0.cancel_reason,o1_0.cancelled_at,o1_0.created_at,o1_0.filled_quantity,o1_0.limit_price,o1_0.order_side,o1_0.order_status,o1_0.order_time,o1_0.order_type,o1_0.portfolio_id,o1_0.quantity,o1_0.trader_id,o1_0.updated_at from orders o1_0 where o1_0.trader_id=?
+2026-03-13T05:33:14.056+08:00  WARN 99064 --- [capital-markets-api] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5h22m26s878ms279µs700ns).

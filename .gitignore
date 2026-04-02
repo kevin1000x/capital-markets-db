@@ -1,0 +1,60 @@
+# ========================
+# Capital Markets DB — .gitignore
+# ========================
+
+# === IDE & Editor ===
+.idea/
+.vscode/
+*.iws
+*.iml
+*.ipr
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# === AI Assistant configs ===
+.claude/
+.agent/
+.mcp.json
+CLAUDE.md
+
+# === Build artifacts ===
+backend/target/
+frontend/node_modules/
+frontend/dist/
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.egg-info/
+venv/
+.env
+
+# === Maven wrapper JAR ===
+.mvn/wrapper/maven-wrapper.jar
+
+# === Temporary / generated ===
+.tmp.driveupload/
+_tree.txt
+*.zip
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Course reports (large binary files) ===
+概念设计文档.docx
+概念设计文档.pdf
+课程设计报告.docx
+课程设计报告.pdf
+需求分析文档.docx
+需求分析文档.pdf
+
+# === Large workflow log ===
+capital_markets_db_workflow_FINAL.md
